@@ -1,5 +1,8 @@
 <template>
-  <div class="home">1</div>
+  <div class="home">
+    <hr />Это файл home.vue
+    <hr />
+  </div>
 </template>
 
 <script>

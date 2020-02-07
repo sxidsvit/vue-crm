@@ -4,18 +4,28 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  }
-]
-
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/login',
+      name: 'login',
+      meta: { layout: 'empty' },
+      component: () => import('../views/Login.vue')
+    },
+    {
+      path: '/categories',
+      name: 'categories',
+      meta: { layout: 'main' },
+      component: () => import('../views/Categories.vue')
+    }
+  ]
 })
 
 export default router
