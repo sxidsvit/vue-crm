@@ -9,11 +9,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      name: 'Home',
-      component: Home
-    },
-    {
       path: '/login',
       name: 'login',
       meta: { layout: 'empty' },
@@ -26,14 +21,20 @@ const router = new VueRouter({
       component: () => import('../views/Register.vue')
     },
     {
+      path: '/',
+      name: 'home',
+      meta: { layout: 'main' },
+      component: () => import('../views/Home.vue')
+    },
+    {
       path: '/categories',
       name: 'categories',
       meta: { layout: 'main' },
       component: () => import('../views/Categories.vue')
     },
     {
-      path: '/detail-record',
-      name: 'detail-record',
+      path: '/detail/:id',
+      name: 'detail',
       meta: { layout: 'main' },
       component: () => import('../views/DetailRecord.vue')
     },
