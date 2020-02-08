@@ -10,12 +10,31 @@
           :class="{invalid: ($v.email.$dirty && !$v.email.required)||($v.email.$dirty && !$v.email.email)}"
         />
         <label for="email">Email</label>
-        <small class="helper-text invalid">Email</small>
+        <small
+          class="helper-text invalid"
+          v-if="$v.email.$dirty && !$v.email.required"
+        >поле не должно быть пустым</small>
+        <small
+          class="helper-text invalid"
+          v-else-if="$v.email.$dirty && !$v.email.email"
+        >введите корректный email</small>
       </div>
       <div class="input-field">
-        <input id="password" type="password" v-model="password" />
+        <input
+          id="password"
+          type="password"
+          v-model.trim="password"
+          :class="{invalid: ($v.password.$dirty && !$v.password.required)||($v.password.$dirty && !$v.password.minLength)}"
+        />
         <label for="password">Пароль</label>
-        <small class="helper-text invalid">Password</small>
+        <small
+          class="helper-text invalid"
+          v-if="$v.password.$dirty && !$v.password.required"
+        >введите пароль</small>
+        <small
+          class="helper-text invalid"
+          v-else-if="$v.password.$dirty && !$v.password.minLength"
+        >должно быть не менее {{$v.password.$params.minLength.min}} символов; сейчас их {{password.length}}</small>
       </div>
     </div>
     <div class="card-action">
@@ -44,15 +63,20 @@ export default {
   }),
   validations: {
     email: { email, required },
-    password: { required, minLenght: minLength(6) }
+    password: { required, minLength: minLength(7) }
   },
   methods: {
     submitHandler() {
-      // здесь предполагается: валидация + запрос к firebase
-      // if (this.$v.$inavalid) {
-      //   this.$v.$touch();
-      //   return;
-      // }
+      if (this.$v.$invalid) {
+        // прошла ли форма валидацию
+        this.$v.$touch(); // активизирум валидацию
+        return;
+      }
+      const formData = {
+        email: this.email,
+        password: this.password
+      };
+      console.log("formData: ", formData);
       this.$router.push("/");
     }
   }
