@@ -54,6 +54,7 @@
 </template>
 
 <script>
+//  декомпозиция нужных методов валидации
 import { email, required, minLength } from "vuelidate/lib/validators";
 export default {
   name: "login",
@@ -67,11 +68,13 @@ export default {
   },
   methods: {
     submitHandler() {
+      //  валидация формы
       if (this.$v.$invalid) {
         // прошла ли форма валидацию
         this.$v.$touch(); // активизирум валидацию
         return;
       }
+      //  подготовка данных для отправки на сервер
       const formData = {
         email: this.email,
         password: this.password
