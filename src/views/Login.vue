@@ -56,6 +56,7 @@
 <script>
 //  декомпозиция нужных методов валидации
 import { email, required, minLength } from "vuelidate/lib/validators";
+import messages from "@/utils/messages";
 export default {
   name: "login",
   data: () => ({
@@ -65,6 +66,12 @@ export default {
   validations: {
     email: { email, required },
     password: { required, minLength: minLength(7) }
+  },
+  mounted() {
+    console.log("this.$route.query: ", this.$route.query);
+    if (messages[this.$route.query.message]) {
+      this.$message(messages[this.$route.query.message]);
+    }
   },
   methods: {
     submitHandler() {
