@@ -65,16 +65,16 @@ export default {
   }),
   validations: {
     email: { email, required },
-    password: { required, minLength: minLength(7) }
+    password: { required, minLength: minLength(6) }
   },
   mounted() {
-    console.log("this.$route.query: ", this.$route.query);
+    // console.log("this.$route.query: ", this.$route.query);
     if (messages[this.$route.query.message]) {
       this.$message(messages[this.$route.query.message]);
     }
   },
   methods: {
-    submitHandler() {
+    async submitHandler() {
       //  валидация формы
       if (this.$v.$invalid) {
         // прошла ли форма валидацию
@@ -86,8 +86,13 @@ export default {
         email: this.email,
         password: this.password
       };
-      console.log("formData: ", formData);
-      this.$router.push("/");
+      try {
+        console.log("Пытаюсь залогиниться на firebase ...");
+        await this.$store.dispatch("login", formData);
+        this.$router.push("/");
+      } catch (e) {
+        console.error("Не  могу залогиниться");
+      }
     }
   }
 };
