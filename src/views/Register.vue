@@ -85,7 +85,7 @@ export default {
     agree: { checked: v => v }
   },
   methods: {
-    submitHandler() {
+    async submitHandler() {
       //  валидация формы
       if (this.$v.$invalid) {
         // прошла ли форма валидацию
@@ -99,7 +99,10 @@ export default {
         name: this.name
       };
       console.log("formData: ", formData);
-      this.$router.push("/");
+      try {
+        await this.$store.dispatch("register", formData);
+        this.$router.push("/");
+      } catch (e) {}
     }
   }
 };

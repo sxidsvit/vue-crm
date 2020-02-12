@@ -11,7 +11,7 @@
       <ul class="right hide-on-small-and-down">
         <li>
           <a ref="dropdown" class="dropdown-trigger black-text" href="#" data-target="dropdown">
-            USER NAME
+            {{name}}
             <i class="material-icons right">arrow_drop_down</i>
           </a>
 
@@ -42,9 +42,15 @@ export default {
     dropdown: null
   }),
   methods: {
-    logout() {
-      console.log("Logout");
+    async logout() {
+      await this.$store.dispatch("logout");
       this.$router.push("/login?message=logout");
+      console.log("Переход на страницу логина");
+    }
+  },
+  computed: {
+    name() {
+      return this.$store.getters.info.name;
     }
   },
   mounted() {

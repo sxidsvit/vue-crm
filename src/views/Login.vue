@@ -68,9 +68,11 @@ export default {
     password: { required, minLength: minLength(6) }
   },
   mounted() {
-    // console.log("this.$route.query: ", this.$route.query);
+    // const text = this.$route.query.message;
+    // console.log("Сообщение о logout:  ", text);
     if (messages[this.$route.query.message]) {
       this.$message(messages[this.$route.query.message]);
+      // debugger;
     }
   },
   methods: {
@@ -87,12 +89,9 @@ export default {
         password: this.password
       };
       try {
-        console.log("Пытаюсь залогиниться на firebase ...");
         await this.$store.dispatch("login", formData);
         this.$router.push("/");
-      } catch (e) {
-        console.error("Не  могу залогиниться");
-      }
+      } catch (e) {}
     }
   }
 };
