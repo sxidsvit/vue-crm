@@ -34,7 +34,7 @@
         <small
           class="helper-text invalid"
           v-else-if="$v.password.$dirty && !$v.password.minLength"
-        >должно быть не менее {{$v.password.$params.minLength.min}} символов; сейчас их {{password.length}}</small>
+        >длина должно быть не менее {{$v.password.$params.minLength.min}} символов; сейчас их {{password.length}}</small>
       </div>
       <div class="input-field">
         <input id="name" type="text" v-model.trim="name" />
