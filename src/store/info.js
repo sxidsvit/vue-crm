@@ -10,7 +10,6 @@ export default {
     async fetchInfo({ dispatch, commit }) {
       try {
         const uid = await dispatch('getUid')
-        console.log('uid: ', uid);
         const snapshot = await firebase.database().ref(`/crm-users/${uid}/info`).once('value')
         const info = snapshot.val()
         commit('setInfo', info)

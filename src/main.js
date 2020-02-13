@@ -5,6 +5,8 @@ import router from './router'
 import store from './store'
 import messagePlugin from '@/utils/message.plugin'
 import dateFilter from '@/filters/date.filter'
+import currencyFilter from "@/filters/currency.filter";
+import loader from '@/components/app/Loader'
 import './registerServiceWorker'
 import 'materialize-css/dist/js/materialize.min'
 
@@ -18,6 +20,8 @@ Vue.config.productionTip = false
 Vue.use(Vuelidate)
 Vue.use(messagePlugin)
 Vue.filter('date', dateFilter)
+Vue.filter('currency', currencyFilter)
+Vue.component('Loader', loader)
 
 // конфигурация для подключения к firebase
 const firebaseConfig = {
