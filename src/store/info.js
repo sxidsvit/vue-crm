@@ -16,7 +16,18 @@ export default {
       } catch (e) {
 
       }
-    }
+    },
+    async updateInfo({ dispatch, commit, getters }, toUpdate) {
+      try {
+        const uid = await dispatch('getUid')
+        const updateData = { ...getters.info, ...toUpdate }
+        await firebase.database().ref(`/crm-users/${uid}/info`).update(updateData)
+        commit('setInfo', updateData)
+      } catch (e) {
+        commit('setError', e)
+        throw e
+      }
+    },
   },
   mutations: {
     setInfo(state, info) {
