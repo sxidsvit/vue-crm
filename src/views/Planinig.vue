@@ -15,7 +15,7 @@
           <strong>{{cat.title}}:</strong>
           {{cat.spend | currency('UAH')}} из {{cat.limit | currency('UAH') }}
         </p>
-        <div class="progress" v-tooltip="cat.tooltip">
+        <div class="progress" v-tooltip="{text: `${cat.tooltip}`, position: 'top'}">
           <div
             class="determinate"
             :class="[cat.progressColor]"

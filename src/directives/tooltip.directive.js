@@ -1,7 +1,9 @@
 export default {
   bind(el, { value }) {
-    M.Tooltip.init(el, { html: value })
+    M.Tooltip.init(el, { html: value.text, position: value.position })
+    // debugger
   },
+
   unbind(el) {
     const tooltip = M.Tooltip.getInstance(el)
 
@@ -9,4 +11,5 @@ export default {
       tooltip.destroy()
     }
   }
+
 }
