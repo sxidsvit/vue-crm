@@ -4,7 +4,8 @@ export default {
 
     Vue.prototype.$message = function (html) {
       // M.toast({ html: html })
-      M.toast({ html, displayLength: 4000 })
+      // M.toast({ html, displayLength: 400 })
+      M.toast({ html })
     }
 
     Vue.prototype.$error = function (html) {

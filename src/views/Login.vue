@@ -90,7 +90,7 @@ export default {
       };
       try {
         await this.$store.dispatch("login", formData);
-        this.$router.push("/");
+        this.$router.push({ name: "home" });
       } catch (e) {}
     }
   }
