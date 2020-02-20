@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { required, minValue } from "vuelidate/lib/validators";
+import { required, minValue } from 'vuelidate/lib/validators'
 export default {
   props: {
     categories: {
@@ -61,7 +61,7 @@ export default {
   },
   data: () => ({
     select: null,
-    title: "",
+    title: '',
     limit: 100,
     current: null
   }),
@@ -71,43 +71,43 @@ export default {
   },
   watch: {
     current(catId) {
-      const { title, limit } = this.categories.find(c => c.id === catId);
-      this.title = title;
-      this.limit = limit;
+      const { title, limit } = this.categories.find(c => c.id === catId)
+      this.title = title
+      this.limit = limit
     }
   },
   created() {
-    const { id, title, limit } = this.categories[0];
-    this.current = id;
-    this.title = title;
-    this.limit = limit;
+    const { id, title, limit } = this.categories[0]
+    this.current = id
+    this.title = title
+    this.limit = limit
   },
   methods: {
     async submitHandler() {
       if (this.$v.$invalid) {
-        this.$v.$touch();
-        return;
+        this.$v.$touch()
+        return
       }
       try {
         const categoryData = {
           id: this.current,
           title: this.title,
           limit: this.limit
-        };
-        await this.$store.dispatch("updateCategory", categoryData);
-        this.$message("Категория упешно обновлена");
-        this.$emit("updated", categoryData);
+        }
+        await this.$store.dispatch('updateCategory', categoryData)
+        this.$message('Категория упешно обновлена')
+        this.$emit('updated', categoryData)
       } catch (e) {}
     }
   },
   mounted() {
-    this.select = M.FormSelect.init(this.$refs.select);
-    M.updateTextFields();
+    this.select = M.FormSelect.init(this.$refs.select)
+    setTimeout(() => M.updateTextFields(), 0)
   },
   destroyed() {
     if (this.select && this.select.destroy) {
-      this.select.destroy();
+      this.select.destroy()
     }
   }
-};
+}
 </script>

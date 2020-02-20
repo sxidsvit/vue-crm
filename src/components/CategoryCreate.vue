@@ -44,10 +44,10 @@
 </template>
 
 <script>
-import { required, minValue } from "vuelidate/lib/validators";
+import { required, minValue } from 'vuelidate/lib/validators'
 export default {
   data: () => ({
-    title: "",
+    title: '',
     limit: 100
   }),
   validations: {
@@ -57,25 +57,25 @@ export default {
   methods: {
     async submitHandler() {
       if (this.$v.$invalid) {
-        this.$v.$touch();
-        return;
+        this.$v.$touch()
+        return
       }
       try {
-        const category = await this.$store.dispatch("createCategory", {
+        const category = await this.$store.dispatch('createCategory', {
           title: this.title,
           limit: this.limit
-        });
-        this.title = "";
-        this.limit = 100;
-        this.$v.$reset();
+        })
+        this.title = ''
+        this.limit = 100
+        this.$v.$reset()
         // всплывающее сообщение
-        this.$message("Категория была создана");
-        this.$emit("created", category);
+        this.$message('Категория была создана')
+        this.$emit('created', category)
       } catch (e) {}
     }
   },
   mounted() {
-    M.updateTextFields();
+    setTimeout(() => M.updateTextFields(), 0)
   }
-};
+}
 </script>

@@ -6,8 +6,9 @@ import router from './router'
 import store from './store'
 import messagePlugin from '@/utils/message.plugin'
 import dateFilter from '@/filters/date.filter'
-import currencyFilter from "@/filters/currency.filter";
-import tooltipDirective from "@/directives/tooltip.directive"
+import currencyFilter from '@/filters/currency.filter'
+import localizeFilter from '@/filters/localize.filter'
+import tooltipDirective from '@/directives/tooltip.directive'
 import loader from '@/components/app/Loader'
 import './registerServiceWorker'
 import 'materialize-css/dist/js/materialize.min'
@@ -23,6 +24,7 @@ Vue.use(Vuelidate)
 Vue.use(messagePlugin)
 Vue.filter('date', dateFilter)
 Vue.filter('currency', currencyFilter)
+Vue.filter('localize', localizeFilter)
 Vue.directive('tooltip', tooltipDirective)
 Vue.component('Loader', loader)
 Vue.component('Paginate', Paginate)
