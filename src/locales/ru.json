@@ -18,6 +18,7 @@
   "Message_EnterDescription": "Введите описание",
   "Message_CategoryTitle": "Введите название категории",
   "Message_MinLength": "Минимальная значение",
+  "Message_NowItIs": "Сейчас она",
   "Category_HasBeenCreated": "Категория была создана",
   "Category_HasBeenUpdated": "Категория упешно обновлена",
   "SelectCategory": "Выберите категорию",
@@ -62,5 +63,7 @@
   "FirstLogin": "Для начала войдите в систему",
   "NoUserWithEmail": "Пользователя с таким email не существует",
   "WrongPassword": "Неверный пароль",
-  "EmailInUse": "Email уже занят"
+  "EmailInUse": "Email уже занят",
+  "Unknown error": "Что-то пошло не так ...",
+  "Вы вышли из системы": "Вы вышли из системы"
 }

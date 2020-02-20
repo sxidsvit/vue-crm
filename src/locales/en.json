@@ -17,6 +17,7 @@
   "Message_EnterDescription": "Enter description",
   "Message_CategoryTitle": "Enter category name",
   "Message_MinLength": "Mininum length is",
+  "Message_NowItIs": "Now it is",
   "Category_HasBeenCreated": "Category has been created",
   "Category_HasBeenUpdated": "Category has been updated",
   "SelectCategory": "Select category",
@@ -46,7 +47,7 @@
   "Stayed": "Left",
   "RecordHasBeenCreated": "Record has been created",
   "NotEnoughMoney": "Not enough money",
-  "CRM_Title": "CRM by Vladilen",
+  "CRM_Title": "Home accounting",
   "Message_EmailRequired": "Email field is required",
   "Message_EmailValid": "Enter valid email",
   "Password": "Password",
@@ -61,5 +62,7 @@
   "FirstLogin": "First login",
   "NoUserWithEmail": "No user with email",
   "WrongPassword": "Invalid password",
-  "EmailInUse": "Email is already in use"
+  "EmailInUse": "Email is already in use",
+  "Unknown error": "Something went wrong ...",
+  "Вы вышли из системы": "You logout"
 }

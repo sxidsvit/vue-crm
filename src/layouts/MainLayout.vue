@@ -29,6 +29,7 @@
 import Navbar from '@/components/app/Navbar.vue'
 import Sidebar from '@/components/app/Sidebar.vue'
 import messages from '@/utils/messages'
+import localizeFilter from '@/filters/localize.filter'
 
 export default {
   name: 'main-layout',
@@ -61,7 +62,8 @@ export default {
      будет возвращенное геттером значение */
     error(fbError) {
       const html = messages[fbError.code]
-      this.$error(html || ' Что-то пошло не так ... ')
+      this.$error(html || localizeFilter('Unknown error'))
+      // this.$error(html || ' Что-то пошло не так ... ')
     }
   }
 }

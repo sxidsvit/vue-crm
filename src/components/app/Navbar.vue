@@ -18,13 +18,15 @@
           <ul id="dropdown" class="dropdown-content">
             <li>
               <router-link to="/profile" class="black-text">
-                <i class="material-icons">account_circle</i>Профиль
+                <i class="material-icons">account_circle</i>
+                {{'ProfileTitle'|localize}}
               </router-link>
             </li>
             <li class="divider" tabindex="-1"></li>
             <li>
               <a href="#" class="black-text" @click.prevent="logout">
-                <i class="material-icons">assignment_return</i>Выйти
+                <i class="material-icons">assignment_return</i>
+                {{'Exit'|localize}}
               </a>
             </li>
           </ul>
@@ -43,30 +45,30 @@ export default {
   }),
   methods: {
     async logout() {
-      await this.$store.dispatch("logout");
-      this.$router.push("/login?message=logout");
-      console.log("Переход на страницу логина");
+      await this.$store.dispatch('logout')
+      this.$router.push('/login?message=logout')
+      console.log('Переход на страницу логина')
     }
   },
   computed: {
     name() {
-      return this.$store.getters.info.name;
+      return this.$store.getters.info.name
     }
   },
   mounted() {
     this.interval = setInterval(() => {
-      this.date = new Date();
-    }, 1000);
-    let element = this.$refs.dropdown;
+      this.date = new Date()
+    }, 1000)
+    let element = this.$refs.dropdown
     this.dropdown = M.Dropdown.init(element, {
       constrainWidth: false
-    });
+    })
   },
   beforeDestroy() {
-    clearInterval(this.interval);
+    clearInterval(this.interval)
     if (this.dropdown && this.dropdown.destroy) {
-      this.dropdown.destroy();
+      this.dropdown.destroy()
     }
   }
-};
+}
 </script>

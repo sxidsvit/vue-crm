@@ -6,12 +6,13 @@
 
 
 <script>
-import messages from "@/utils/messages";
+import messages from '@/utils/messages'
+import localizeFilter from '@/filters/localize.filter'
 export default {
   computed: {
     // если что-то меняется в геттерах, то обновляется данное вычисляемое свойство error (в этом СМЫСЛ геттерев !!! )
     error() {
-      return this.$store.getters.error;
+      return this.$store.getters.error
     }
   },
   watch: {
@@ -19,9 +20,10 @@ export default {
      и если оно меняется. вызываем  функцию аргументом которой
      будет возвращенное геттером значение */
     error(fbError) {
-      const html = messages[fbError.code];
-      this.$error(html || " Что-то пошло не так ... ");
+      const html = messages[fbError.code]
+      this.$error(html || localizeFilter('Unknown error'))
+      // this.$error(html || ' Что-то пошло не так ... ')
     }
   }
-};
+}
 </script>
