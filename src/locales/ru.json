@@ -1,6 +1,6 @@
 {
   "ProfileTitle": "Профиль",
-  "Message_EnterName": "Введите ваше имя",
+  "Message_EnterName": "Введите имя",
   "Update": "Обновить",
   "Create": "Создать",
   "Bill": "Счет",
@@ -8,6 +8,7 @@
   "Exit": "Выйти",
   "Edit": "Редактировать",
   "Menu_Bill": "Счет",
+  "Detail_Title": "Запись",
   "Menu_History": "История",
   "Menu_Planning": "Планирование",
   "Menu_NewRecord": "Новая запись",
@@ -18,7 +19,6 @@
   "Message_EnterDescription": "Введите описание",
   "Message_CategoryTitle": "Введите название категории",
   "Message_MinLength": "Минимальная значение",
-  "Message_NowItIs": "Сейчас она",
   "Category_HasBeenCreated": "Категория была создана",
   "Category_HasBeenUpdated": "Категория упешно обновлена",
   "SelectCategory": "Выберите категорию",
@@ -64,6 +64,5 @@
   "NoUserWithEmail": "Пользователя с таким email не существует",
   "WrongPassword": "Неверный пароль",
   "EmailInUse": "Email уже занят",
-  "Unknown error": "Что-то пошло не так ...",
-  "Вы вышли из системы": "Вы вышли из системы"
+  "Error": "Ошибка"
 }

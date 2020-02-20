@@ -34,7 +34,7 @@ export default {
       state.info = info
     },
     clearInfo(state) {
-      state.info = {}
+      state.info = { locale: state.info.locale }
     }
   },
   getters: {

@@ -47,7 +47,6 @@ export default {
     async logout() {
       await this.$store.dispatch('logout')
       this.$router.push('/login?message=logout')
-      console.log('Переход на страницу логина')
     }
   },
   computed: {

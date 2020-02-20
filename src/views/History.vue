@@ -39,6 +39,9 @@ import localizeFilter from '@/filters/localize.filter'
 
 export default {
   name: 'history',
+  metaInfo() {
+    return { title: this.$title('Menu_History') }
+  },
   mixins: [paginationMixin],
   extends: Pie,
   data: () => ({

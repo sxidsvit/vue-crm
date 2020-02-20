@@ -8,6 +8,7 @@
   "Exit": "Exit",
   "Edit": "Edit",
   "Menu_Bill": "Bill",
+  "Detail_Title": "Detail",
   "Menu_History": "History",
   "Menu_Planning": "Planning",
   "Menu_NewRecord": "New record",
@@ -17,7 +18,6 @@
   "Message_EnterDescription": "Enter description",
   "Message_CategoryTitle": "Enter category name",
   "Message_MinLength": "Mininum length is",
-  "Message_NowItIs": "Now it is",
   "Category_HasBeenCreated": "Category has been created",
   "Category_HasBeenUpdated": "Category has been updated",
   "SelectCategory": "Select category",
@@ -63,6 +63,5 @@
   "NoUserWithEmail": "No user with email",
   "WrongPassword": "Invalid password",
   "EmailInUse": "Email is already in use",
-  "Unknown error": "Something went wrong ...",
-  "Вы вышли из системы": "You logout"
+  "Error": "Error"
 }
