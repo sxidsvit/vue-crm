@@ -32,14 +32,14 @@
 </template>
 
 <script>
-import paginationMixin from "@/mixins/pagination.mixin";
 import HistoryTable from "@/components/HistoryTable";
+import paginationMixin from "@/mixins/pagination.mixin";
 import { Pie } from "vue-chartjs";
 
 export default {
   name: "history",
-  extends: Pie,
   mixins: [paginationMixin],
+  extends: Pie,
   data: () => ({
     loading: true,
     records: []
