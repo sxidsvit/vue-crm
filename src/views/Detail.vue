@@ -46,6 +46,7 @@ export default {
       categoryName: category.title
     };
     this.loading = false;
+    console.log("this :", this);
   }
 };
 </script>
