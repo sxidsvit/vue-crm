@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "asp-ads"
+  },
+  "targets": {
+    "asp-ads": {
+      "hosting": {
+        "crm": [
+          "asp-crm"
+        ]
+      }
+    }
+  }
+}
