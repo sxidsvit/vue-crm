@@ -10,7 +10,7 @@ import messages from '@/utils/messages'
 import localizeFilter from '@/filters/localize.filter'
 export default {
   computed: {
-    // если что-то меняется в геттерах, то обновляется данное вычисляемое свойство error (в этом СМЫСЛ геттерев !!! )
+    // если что-то меняется в геттерах, то обновляется данное вычисляемое свойство error (в этом СМЫСЛ геттеров !!! )
     error() {
       return this.$store.getters.error
     }

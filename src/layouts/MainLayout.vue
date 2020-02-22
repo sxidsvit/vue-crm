@@ -16,7 +16,8 @@
         <router-link
           to="/record"
           class="btn-floating btn-large blue"
-          v-tooltip="{text: 'Cоздать новую запись', position: 'left'}"
+          v-tooltip="{text: `${tooltip}`, position: 'left'}"
+          :key="locale"
         >
           <i class="large material-icons">add</i>
         </router-link>
@@ -54,6 +55,9 @@ export default {
     },
     locale() {
       return this.$store.getters.info.locale
+    },
+    tooltip() {
+      return localizeFilter('CreateNewRecord')
     }
   },
   watch: {
