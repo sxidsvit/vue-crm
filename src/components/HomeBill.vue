@@ -28,7 +28,7 @@ export default {
   methods: {
     // сколько у нас денег в разных валютах (currency)
     getCurrency(currency) {
-      console.log('this.rates: ', this.rates)
+      console.log(' HomeBill.vue - rates: ', this.rates)
       return Math.floor(this.base * this.rates[currency] * 100) / 100
     }
   }
