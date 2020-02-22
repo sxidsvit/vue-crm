@@ -18,7 +18,7 @@ export default new Vuex.Store({
       // let res = await fetch(`http://data.fixer.io/api/latest?access_key=${key}&symbols=USD,EUR,UAH`)
 
       // www.exchangerate-api.com 
-      let res = await fetch(`https://api.exchangerate-api.com/v4/latest/UAH`)
+      let res = await fetch(`https://api.exchangerate-api.com/v4/latest/USD`)
       res = await res.json()
       return res
     }
