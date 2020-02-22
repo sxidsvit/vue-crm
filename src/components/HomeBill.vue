@@ -20,17 +20,16 @@ export default {
     currencies: ['UAH', 'USD', 'EUR']
   }),
   computed: {
-    // вычисляем сколько денег на счету в евро
+    // вычисляем сколько денег на счету в долларах США
     base() {
-      return (
-        this.$store.getters.info.bill / this.rates['UAH'] / this.rates['EUR']
-      )
+      return this.$store.getters.info.bill / this.rates['UAH']
     }
   },
   methods: {
     // сколько у нас денег в разных валютах (currency)
     getCurrency(currency) {
-      return Math.floor(this.base * this.rates[currency])
+      console.log('this.rates: ', this.rates)
+      return Math.floor(this.base * this.rates[currency] * 100) / 100
     }
   }
 }
